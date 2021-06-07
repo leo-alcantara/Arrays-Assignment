@@ -12,28 +12,31 @@ public class NameRepository {
     }
 
     //Method 02
-    public static void clear(String[] string) {
+    public static void clear(String[] input) {
         //int j = 0;
         //for (int i = 0; i < string.length; i++) {
          //   for (j = 0; j < string.length; j++) {
            //     if (i == j) {
-        string = null;
-        System.out.println(Arrays.toString(string));
+        // }
+        //  }
+        //}
+        input = Arrays.copyOf(input, input.length - input.length);
+        System.out.println(Arrays.toString(input));
 
     }
-           // }
-
-      //  }
-
-    //}
 
     //Method 03
-    /*public static boolean add (final String fullName){
-       String[] names = Arrays.copyOf(names, names.length + 1);
-       //fullName[fullName.length - 1] = elementToAdd;
-        if()
-       return true;
-    }*/
+    public static boolean add (final String[] fullName){
+        String nameToAdd = new String();
+        names = Arrays.copyOf(fullName, fullName.length + 1);
+        fullName[fullName.length -1] = nameToAdd;
+
+        for(int i = 0; i < fullName.length; i++){
+            if(fullName[i]!= nameToAdd) {
+            } return true;
+        }
+       return false;
+    }
 
     /*Method 04
     public static String find(final String fullName){
@@ -66,14 +69,18 @@ public class NameRepository {
 
     }*/
 
-    private static String[] names = {"Leo", "Sophie", "Noelle", "Philip", "Goran", "Elisabeth"};
+    private static String[] names = {"Erik", " ", "Svensson"};
+
 
     public static void main(String[] args) {
 
-        clear(names);
+       // getSize(names);
+        //clear(names);
+        String nameToAdd = "Alcantara";
+        add(names);
 
 
-        //getSize(names);
+
 
 
     }
