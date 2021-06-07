@@ -1,0 +1,45 @@
+Array assignment week three.
+
+You are going to make an application that store names in a String array with the following format: “Erik Svensson” -> “[first name][whitespace][last name]”.
+Requirements:
+• Maven Project
+• Create a new class NameRepository containing a private static array of Strings
+• Fully implemented methods. (See method requirements)
+• The array should only contain one copy of a particular name that means no duplicates.
+• Test all your methods with JUnit4 or JUnit5. Tip: Write tests as you go. Since working with
+arrays is very “fiddly”.
+
+Method Requirements:
+(Optional)
+public static int getSize()
+Returns number of elements in the array
+
+public static void setNames(String[] names)
+Optional but makes your tests easier. Sends in an array that set the private static array
+
+public static void clear()
+Should completely empty the array.
+
+public static boolean add(final String fullName)
+Should add a new name to the array. Returns true when name was added and false when the array contains the name.
+
+public static String find(final String fullName)
+Returns name if found and null if not found.
+
+public static String[] findAll()
+Returns all names in a new array
+
+public static boolean update(final String original, final String updatedName)
+Should find a name and replace it with new fullName if available. Returns true if name was found and updated with the new name. False if name could not be updated because name was not found or name was found but an existing name matching the updatedName already exists.
+
+public static String[] findByFirstName(final String firstName)
+Searches the array trying to find all names that has passed in first name. Returns a String array containing all matches.
+
+public static String[] findByLastName(final String lastName)
+Searches the array trying to find all names that has passed in last name. Returns a String array containing all matches.
+
+(Optional because of difficulty)
+public static boolean remove(final String fullName)
+Should remove a name from the array. Returns true if name was removed and false if the name was not removed for some reason.
+
+You may add any number of private helper methods. Remember to keep it simple with focused methods.
