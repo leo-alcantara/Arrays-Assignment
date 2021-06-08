@@ -19,33 +19,34 @@ public class NameRepository {
     //
     //}
 
-    //Method 03
-    //public static boolean add (final String fullName){
-    //        Arrays.binarySearch(names, fullName);
-    //        if(nameFound != fullName) {
-    //            names = Arrays.copyOf(names, names.length + 1);
-    //            names[names.length-1] = fullName;
-    //            //names = Arrays.copyOf(names, names.length);
-    //            System.out.println(Arrays.toString(names));
-    //         return true;
-    //        } else {
-    //            System.out.println("Name has already been added to array.");
-    //        }
-    //       return true;
-    //}
+    /*Method 03
+    public static boolean add(final String fullName) {
 
-   //Method 04
-    public static String find(final String fullName){
-        for (String nameFound : names) {
-            if (fullName.equals(nameFound)){
-                System.out.println(fullName);
-                return fullName;
-           } else{
-                System.out.println("Name not found.");
-             return null;
-            }
+        Arrays.sort(names);
+        int foundIndex = Arrays.binarySearch(names, fullName);
+        if (foundIndex < 0) {
+            String[] newNames = Arrays.copyOf(names, names.length + 1);
+            newNames[newNames.length - 1] = fullName;
+            names = newNames;
+            return true;
+
+        } else {
+            System.out.println("Name has already been added to array.");
+            return false;
         }
-             return null;
+    }   */
+
+    //Method 04
+    public static String find(final String fullName) {
+        Arrays.sort(names);
+        int foundIndex = Arrays.binarySearch(names, fullName);
+        if (foundIndex >= 0) {
+            System.out.println(fullName);
+            return fullName;
+        } else {
+            System.out.println("The name " + fullName + " is not contained inside the Names array.");
+            return null;
+        }
     }
 
     //Method 05
@@ -84,23 +85,29 @@ public class NameRepository {
 
 
     public static void main(String[] args) {
+        //Method 01
+        // getSize(names);
 
-       // getSize(names);
+        //Method 02
         //clear(names);
 
-       //String nameToAdd = "Simon Elbrink";
-       //add(nameToAdd);
+        //Method 03
+        //String nameToAdd = "Leo de Alcantara";
+        //add(nameToAdd);
+        //System.out.println(Arrays.toString(names));
+        //add(nameToAdd);
 
-      String nameFound = "Simon Elbrink";
-      find(nameFound);
+        //Method 04
+        String findName = "Erik Svensson";
+        find(findName);
 
-      //findAll();
+        //Method 05
+        //findAll();
 
-       //String firstName= "";
+        //String firstName= "";
 
 
     }
-
 
 
 }
