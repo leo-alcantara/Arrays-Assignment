@@ -12,10 +12,10 @@ public class NameRepository {
     }
 
     //Method 02
-    public static void clear() {
+    public static void clear(String[] names) {
 
-        names = Arrays.copyOf(names, names.length - names.length);
-        System.out.println(Arrays.toString(names));
+        NameRepository.names = Arrays.copyOf(NameRepository.names, NameRepository.names.length - NameRepository.names.length);
+        System.out.println(Arrays.toString(NameRepository.names));
 
     }
 
@@ -28,6 +28,7 @@ public class NameRepository {
             String[] newNames = Arrays.copyOf(names, names.length + 1);
             newNames[newNames.length - 1] = fullName;
             names = newNames;
+            System.out.println(Arrays.toString(names));
             return true;
 
         } else {
@@ -104,7 +105,29 @@ public class NameRepository {
 
     }
 
-    private static String[] names = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Leo Odin", "Philip de Alcantara", "Noelle Odin", "Martha Svensson"};
+
+    //Method 09 INCOMPLETE
+    public static boolean remove(final String fullName){
+        //for
+        //create array to insert removed name
+        //look for name
+        //if finds it
+        //remove it
+        for (int i = 0; i < names.length; i++) {
+            //String nameToRemove= fullName;
+            String[] removedNames={};
+            if(names[i].equals(fullName)){
+                removedNames=Arrays.copyOf(removedNames, removedNames.length+1);
+                removedNames[0] = names[i];
+                names[i]=names[i++];
+
+            }
+        }
+        System.out.println(Arrays.toString(names));
+        return true;
+    }
+
+    private static String[] names = {"Erik Svensson"};
 
 
     public static void main(String[] args) {
@@ -138,8 +161,12 @@ public class NameRepository {
         //findByFirstName(firstName);
 
         //Method 08
-        String lastName = "Odin";
-        findByLastName(lastName);
+        //String lastName = "Odin";
+        //findByLastName(lastName);
+
+        //Method 09
+        //String fullName= "Erik Svensson";
+        //remove(fullName);
 
     }
 
