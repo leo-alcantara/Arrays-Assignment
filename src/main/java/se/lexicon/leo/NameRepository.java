@@ -5,21 +5,21 @@ import java.util.Arrays;
 public class NameRepository {
 
     //Method 01
-    //public static int getSize(String[] names) {
-    //    int size = names.length;
-    //    System.out.println("The size of the array is: " + size);
-    //    return size;
-    //}
+    public static int getSize(String[] names) {
+        int size = names.length;
+        System.out.println("The size of the array is: " + size);
+        return size;
+    }
 
     //Method 02
-    //public static void clear() {
-    //
-    //    names = Arrays.copyOf(names, names.length - names.length);
-    //    System.out.println(Arrays.toString(names));
-    //
-    //}
+    public static void clear() {
 
-    /*Method 03
+        names = Arrays.copyOf(names, names.length - names.length);
+        System.out.println(Arrays.toString(names));
+
+    }
+
+    //Method 03
     public static boolean add(final String fullName) {
 
         Arrays.sort(names);
@@ -34,7 +34,7 @@ public class NameRepository {
             System.out.println("Name has already been added to array.");
             return false;
         }
-    }   */
+    }
 
     //Method 04
     public static String find(final String fullName) {
@@ -50,38 +50,68 @@ public class NameRepository {
     }
 
     //Method 05
-    //public static String[] findAll(){
-    //    String [] newNames= Arrays.copyOf(names, names.length);
-    //    System.out.print("Array newNames: ");
-    //    System.out.println(Arrays.toString(newNames));
-    //    return newNames;
-    //}
+    public static String[] findAll() {
+        String[] newNames = Arrays.copyOf(names, names.length);
+        System.out.print("Array newNames: ");
+        System.out.println(Arrays.toString(newNames));
+        return newNames;
+    }
 
-    /*Method 06
-    public static boolean update(final String original, final String updatedName){
+    //Method 06 INCOMPLETE
+    public static boolean update(final String original, final String updatedName) {
+        // for loop
+        // search the original name
+        // condition : if (T) = replace and finish
+        // print data not found
+
+        for (int i = 0; i < names.length; i++) {
+
+            if (names[i].equals(original)) {
+                names[i] = updatedName;
+                System.out.println("Operation is completed.");
+                return true;
+                //System.out.println("Name " + updatedName + " already exists inside names.");
+            }
+        }
+        System.out.println("The name " + original + " could not be found.");
+
+        return false;
+    }
+
+    //Method 07 INCOMPLETE
+    public static String[] findByFirstName(final String firstName) {
+
+        String[] namesMatched = {};
+        for (int i = 0; i < names.length; i++) {
+            String[] splitNames = names[i].split(" ");
+            if (splitNames[0].equals(firstName)) {
+            namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
+            namesMatched[namesMatched.length-1]=names[i];
+
+            }
+        }
+        System.out.println(Arrays.toString(namesMatched));
+        return namesMatched;
+    }
 
 
-    }*/
-
-    //Method 07
-    //public static String[] findByFirstName(final String firstName){
-    //    String[] matchedNames={};
-    //    matchedNames[matchedNames.length-1]=firstName;
-    //    names.contains(firstName);
-    //
-    //
-    //
-    //      return firstName;
-    //}
-
-
-    /*Method 08
+    //Method 08
     public static String[] findByLastName(final String lastName){
+        String[] namesMatched = {};
+        for (int i = 0; i < names.length; i++) {
+            String[] splitNames = names[i].split(" ");
+            if (splitNames[1].equals(lastName)) {
+                namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
+                namesMatched[namesMatched.length-1]=names[i];
 
+            }
+        }
+        System.out.println(Arrays.toString(namesMatched));
+        return namesMatched;
 
-    }*/
+    }
 
-    private static String[] names = {"Erik Svensson", "Simon Elbrink"};
+    private static String[] names = {"Erik Svensson", "Leo Alcantara", "Sophie Odin", "Philip Alcantara", "Noelle Odin", "Martha Svensson"};
 
 
     public static void main(String[] args) {
@@ -98,14 +128,25 @@ public class NameRepository {
         //add(nameToAdd);
 
         //Method 04
-        String findName = "Erik Svensson";
-        find(findName);
+        //String findName = "Erik Svensson";
+        //find(findName);
 
         //Method 05
         //findAll();
 
-        //String firstName= "";
+        //Method 06
+        //String nameToReplace ="Noelle";
+        //String newName = "Philip";
+        //update(nameToReplace, newName);
+        //System.out.println(Arrays.toString(names));
 
+        //Method 07
+        //String firstName = "Erik";
+        //findByFirstName(firstName);
+
+        //Method 08
+        String lastName = "Alcantara";
+        findByLastName(lastName);
 
     }
 
