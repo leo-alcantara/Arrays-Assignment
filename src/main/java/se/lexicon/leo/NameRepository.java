@@ -57,20 +57,14 @@ public class NameRepository {
         return newNames;
     }
 
-    //Method 06 INCOMPLETE
+    //Method 06
     public static boolean update(final String original, final String updatedName) {
-        // for loop
-        // search the original name
-        // condition : if (T) = replace and finish
-        // print data not found
-
-        for (int i = 0; i < names.length; i++) {
+       for (int i = 0; i < names.length; i++) {
 
             if (names[i].equals(original)) {
                 names[i] = updatedName;
                 System.out.println("Operation is completed.");
                 return true;
-                //System.out.println("Name " + updatedName + " already exists inside names.");
             }
         }
         System.out.println("The name " + original + " could not be found.");
@@ -78,16 +72,14 @@ public class NameRepository {
         return false;
     }
 
-    //Method 07 INCOMPLETE
+    //Method 07
     public static String[] findByFirstName(final String firstName) {
-
         String[] namesMatched = {};
         for (int i = 0; i < names.length; i++) {
             String[] splitNames = names[i].split(" ");
             if (splitNames[0].equals(firstName)) {
             namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
             namesMatched[namesMatched.length-1]=names[i];
-
             }
         }
         System.out.println(Arrays.toString(namesMatched));
@@ -100,18 +92,19 @@ public class NameRepository {
         String[] namesMatched = {};
         for (int i = 0; i < names.length; i++) {
             String[] splitNames = names[i].split(" ");
-            if (splitNames[1].equals(lastName)) {
+            if (splitNames[splitNames.length-1].equals(lastName)) {
                 namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
                 namesMatched[namesMatched.length-1]=names[i];
 
             }
         }
+
         System.out.println(Arrays.toString(namesMatched));
         return namesMatched;
 
     }
 
-    private static String[] names = {"Erik Svensson", "Leo Alcantara", "Sophie Odin", "Philip Alcantara", "Noelle Odin", "Martha Svensson"};
+    private static String[] names = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Leo Odin", "Philip de Alcantara", "Noelle Odin", "Martha Svensson"};
 
 
     public static void main(String[] args) {
@@ -141,11 +134,11 @@ public class NameRepository {
         //System.out.println(Arrays.toString(names));
 
         //Method 07
-        //String firstName = "Erik";
+        //String firstName = "Leo";
         //findByFirstName(firstName);
 
         //Method 08
-        String lastName = "Alcantara";
+        String lastName = "Odin";
         findByLastName(lastName);
 
     }
