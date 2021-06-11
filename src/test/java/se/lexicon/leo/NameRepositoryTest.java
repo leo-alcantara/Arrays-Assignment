@@ -23,7 +23,22 @@ public class NameRepositoryTest {
         assertTrue(true);
     }
 
-    //Method 02 clear();
+    //Method 02 setNames();
+    @Test
+    public void test_setNames_Successfully(){
+
+        //ARRANGE
+        String[] names={"Erik Svensson"};
+        String[] newNames={"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
+        boolean namesSet=false;
+        //ACT
+        NameRepository.setNames(names);
+        //ASSERT
+        assertTrue(true);
+
+
+    }
+    //Method 03 clear();
     @Test
     public void test_clear_successfully() {
 
@@ -37,7 +52,7 @@ public class NameRepositoryTest {
     }
 
 
-    //Method 03 add();
+    //Method 04 add();
     @Test
     public void test_add_successfully() {
 
@@ -52,7 +67,7 @@ public class NameRepositoryTest {
         assertTrue(wasAdded);
     }
 
-    //Method 04 find();
+    //Method 05 find();
     @Test
     public void test_find_Successfully() {
 
@@ -68,7 +83,7 @@ public class NameRepositoryTest {
 
     }
 
-    //Method 05 findAll();
+    //Method 06 findAll();
     @Test
     public void test_findAll_successfully() {
         //ARRANGE
@@ -83,7 +98,7 @@ public class NameRepositoryTest {
     }
 
     @Test
-    //Method 06 update();
+    //Method 07 update();
     public void test_update_successfully() {
         //ARRANGE
         String original = "Erik Svensson";
@@ -98,7 +113,7 @@ public class NameRepositoryTest {
 
     }
     @Test
-    //Method 07 findByFirstName();
+    //Method 08 findByFirstName();
     public void test_findByFirstName_successfully() {
         //ARRANGE
         String firstName = "Erik";
@@ -110,7 +125,7 @@ public class NameRepositoryTest {
 
     }
 
-    //Method 08 findByLastName();
+    //Method 09 findByLastName();
     @Test
     public void test_findByLastName_successfully(){
         //ARRANGE
