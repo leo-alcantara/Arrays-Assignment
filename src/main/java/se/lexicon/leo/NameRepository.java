@@ -22,8 +22,8 @@ public class NameRepository {
     //Method 03
     public static void clear(String[] names) {
 
-        NameRepository.names = Arrays.copyOf(NameRepository.names, NameRepository.names.length - NameRepository.names.length);
-        System.out.println(Arrays.toString(NameRepository.names));
+        names = Arrays.copyOf(names, 0);
+        System.out.println(Arrays.toString(names));
 
     }
 
@@ -114,12 +114,13 @@ public class NameRepository {
     }
 
 
-    //Method 10 INCOMPLETE
+    //Method 10
     public static boolean remove(final String fullName) {
         for (int i = 0; i < names.length; i++) {
             if (names[i].equals(fullName)) {
                 names[i] = names[names.length - 1];
                 names = Arrays.copyOf(names, names.length - 1);
+                Arrays.sort(names);
                 break;
             }
         }
@@ -138,7 +139,7 @@ public class NameRepository {
         //setNames(names);
 
         //Method 03
-        //clear(names);
+        clear(names);
 
         //Method 04
         //String nameToAdd = "Leo de Alcantara";
@@ -168,8 +169,8 @@ public class NameRepository {
         //findByLastName(lastName);
 
         //Method 10
-        String fullName = "Erik Svensson";
-        remove(fullName);
+        //String fullName = "Leo de Alcantara";
+        //remove(fullName);
 
     }
 
