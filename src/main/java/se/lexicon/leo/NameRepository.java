@@ -10,10 +10,11 @@ public class NameRepository {
         System.out.println("The size of the array is: " + size);
         return size;
     }
+
     //Method 02
-    public static void setNames(String[] names){
-        String[] newNames={"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
-        names=newNames;
+    public static void setNames(String[] names) {
+        String[] newNames = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
+        names = newNames;
         System.out.println(Arrays.toString(names));
 
     }
@@ -67,7 +68,7 @@ public class NameRepository {
 
     //Method 07
     public static boolean update(final String original, final String updatedName) {
-       for (int i = 0; i < names.length; i++) {
+        for (int i = 0; i < names.length; i++) {
 
             if (names[i].equals(original)) {
                 names[i] = updatedName;
@@ -86,8 +87,8 @@ public class NameRepository {
         for (int i = 0; i < names.length; i++) {
             String[] splitNames = names[i].split(" ");
             if (splitNames[0].equals(firstName)) {
-            namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
-            namesMatched[namesMatched.length-1]=names[i];
+                namesMatched = Arrays.copyOf(namesMatched, namesMatched.length + 1);
+                namesMatched[namesMatched.length - 1] = names[i];
             }
         }
         System.out.println(Arrays.toString(namesMatched));
@@ -96,13 +97,13 @@ public class NameRepository {
 
 
     //Method 09
-    public static String[] findByLastName(final String lastName){
+    public static String[] findByLastName(final String lastName) {
         String[] namesMatched = {};
         for (int i = 0; i < names.length; i++) {
             String[] splitNames = names[i].split(" ");
-            if (splitNames[splitNames.length-1].equals(lastName)) {
-                namesMatched=Arrays.copyOf(namesMatched, namesMatched.length+1);
-                namesMatched[namesMatched.length-1]=names[i];
+            if (splitNames[splitNames.length - 1].equals(lastName)) {
+                namesMatched = Arrays.copyOf(namesMatched, namesMatched.length + 1);
+                namesMatched[namesMatched.length - 1] = names[i];
 
             }
         }
@@ -114,27 +115,19 @@ public class NameRepository {
 
 
     //Method 10 INCOMPLETE
-    public static boolean remove(final String fullName){
-        //for
-        //create array to insert removed name
-        //look for name
-        //if finds it
-        //remove it
+    public static boolean remove(final String fullName) {
         for (int i = 0; i < names.length; i++) {
-            //String nameToRemove= fullName;
-            String[] removedNames={};
-            if(names[i].equals(fullName)){
-                removedNames=Arrays.copyOf(removedNames, removedNames.length+1);
-                removedNames[0] = names[i];
-                names[i]=names[i++];
-
+            if (names[i].equals(fullName)) {
+                names[i] = names[names.length - 1];
+                names = Arrays.copyOf(names, names.length - 1);
+                break;
             }
         }
         System.out.println(Arrays.toString(names));
         return true;
     }
 
-    private static String[] names = {"Erik Svensson"};
+    private static String[] names = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
 
 
     public static void main(String[] args) {
@@ -142,7 +135,7 @@ public class NameRepository {
         // getSize(names);
 
         //Method 02
-        setNames(names);
+        //setNames(names);
 
         //Method 03
         //clear(names);
@@ -175,8 +168,8 @@ public class NameRepository {
         //findByLastName(lastName);
 
         //Method 10
-        //String fullName= "Erik Svensson";
-        //remove(fullName);
+        String fullName = "Erik Svensson";
+        remove(fullName);
 
     }
 

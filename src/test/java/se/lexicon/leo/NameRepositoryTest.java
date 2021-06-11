@@ -25,7 +25,7 @@ public class NameRepositoryTest {
 
     //Method 02 setNames();
     @Test
-    public void test_setNames_Successfully(){
+    public void test_setNames_successfully(){
 
         //ARRANGE
         String[] names={"Erik Svensson"};
@@ -136,6 +136,18 @@ public class NameRepositoryTest {
         //ASSERT
         assertTrue(true);
 
+    }
+
+    //Method 10 remove();
+    @Test
+    public void test_remove_succesfully(){
+        //ARRANGE
+        String fullName= "Erik Svensson";
+        //ACT
+        NameRepository.remove(fullName);
+
+        //ASSURE
+        assertTrue(true);
     }
 
 
