@@ -2,8 +2,7 @@ package se.lexicon.leo;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class NameRepositoryTest {
 
@@ -17,7 +16,7 @@ public class NameRepositoryTest {
         boolean sizeGot = false;
 
         //Act
-        size = NameRepository.getSize(names);
+        size = NameRepository.getSize();
 
         //Assert
         assertTrue(true);
@@ -30,7 +29,7 @@ public class NameRepositoryTest {
         //ARRANGE
         String[] names={"Erik Svensson"};
         String[] newNames={"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
-        boolean namesSet=false;
+        //boolean namesSet=false;
         //ACT
         NameRepository.setNames(names);
         //ASSERT
@@ -46,7 +45,7 @@ public class NameRepositoryTest {
         String[] names = {"Erik Svensson"};
         boolean wasCleared = false;
         //Act
-        NameRepository.clear(names);
+        NameRepository.clear();
         //Assert
         assertTrue(true);
     }

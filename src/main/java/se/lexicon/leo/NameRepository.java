@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class NameRepository {
 
     //Method 01
-    public static int getSize(String[] names) {
+    public static int getSize() {
         int size = names.length;
         System.out.println("The size of the array is: " + size);
         return size;
@@ -13,14 +13,22 @@ public class NameRepository {
 
     //Method 02
     public static void setNames(String[] names) {
-        String[] newNames = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
-        names = newNames;
-        System.out.println(Arrays.toString(names));
+        for (int i = 0; i < NameRepository.names.length; i++) {
+            Arrays.sort(NameRepository.names);
+            if (NameRepository.names[i].equals(NameRepository.names[i++])) {
+                System.out.println("Action can't be performed because of a duplicity.");
+                break;
+            } else {
+               NameRepository.names = names;
+               System.out.println(Arrays.toString(names));
+            }
 
+        }
     }
 
+
     //Method 03
-    public static void clear(String[] names) {
+    public static void clear() {
 
         names = Arrays.copyOf(names, 0);
         System.out.println(Arrays.toString(names));
@@ -120,7 +128,7 @@ public class NameRepository {
             if (names[i].equals(fullName)) {
                 names[i] = names[names.length - 1];
                 names = Arrays.copyOf(names, names.length - 1);
-                Arrays.sort(names);
+                //Arrays.sort(names);
                 break;
             }
         }
@@ -128,18 +136,19 @@ public class NameRepository {
         return true;
     }
 
-    private static String[] names = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
+    private static String[] names = {"Elisabeth Odin", "Erik Svensson"};
 
 
     public static void main(String[] args) {
         //Method 01
-        // getSize(names);
+        //getSize(names);
 
         //Method 02
-        //setNames(names);
+        String[] newNames = {"Erik Svensson", "Leo de Alcantara", "Sophie Odin", "Noelle Odin", "Philip de Alcantara"};
+        setNames(newNames);
 
         //Method 03
-        clear(names);
+        //clear();
 
         //Method 04
         //String nameToAdd = "Leo de Alcantara";
@@ -155,7 +164,7 @@ public class NameRepository {
         //findAll();
 
         //Method 07
-        //String nameToReplace ="Noelle";
+        //String nameToReplace ="Noelle Odin";
         //String newName = "Philip";
         //update(nameToReplace, newName);
         //System.out.println(Arrays.toString(names));
